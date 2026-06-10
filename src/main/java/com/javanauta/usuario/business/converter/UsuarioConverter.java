@@ -16,6 +16,7 @@ public class UsuarioConverter {
     public Usuario paraUsuario(UsuarioDTO usuarioDTO){
         return Usuario.builder()
                 .nome(usuarioDTO.getNome())
+                .email(usuarioDTO.getEmail())
                 .senha(usuarioDTO.getSenha())
                 .enderecos(paraListaEndereco(usuarioDTO.getEnderecos()))
                 .telefones(paraListaTelefones(usuarioDTO.getTelefones()))
@@ -58,6 +59,7 @@ public class UsuarioConverter {
     public UsuarioDTO paraUsuarioDTO(Usuario usuarioDTO){
         return UsuarioDTO.builder()
                 .nome(usuarioDTO.getNome())
+                .email(usuarioDTO.getEmail())
                 .senha(usuarioDTO.getSenha())
                 .enderecos(paraListaEnderecoDTO(usuarioDTO.getEnderecos()))
                 .telefones(paraListaTelefonesDTO(usuarioDTO.getTelefones()))
